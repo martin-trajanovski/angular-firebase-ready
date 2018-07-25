@@ -1,0 +1,55 @@
+<div class="container mb-3">
+	<form #addCompanyForm="ngForm" name="addCompanyForm">
+		<div class="row mt-3">
+			<div class="col text-left btn-back">
+				<button type="button" class="btn btn-outline-secondary" routerLink="/companies">
+					<i class="fa fa-arrow-left" aria-hidden="true"></i>
+					Back
+				</button>
+			</div>
+			<div class="col text-right">
+				<button type="button" class="btn btn-success" (click)="addCompany()" [disabled]="!addCompanyForm.valid">
+					<i class="fa fa-plus" aria-hidden="true"></i>
+					Add
+				</button>
+				<button type="button" class="btn btn-danger ml-3" (click)="clear()">
+					<i class="fa fa-window-close" aria-hidden="true"></i>
+					Clear
+				</button>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-5 mb-3">
+				<img [src]="newCompany.logo" class="img-fluid mb-3" alt="">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Logo url</span>
+					</div>
+					<input type="text" [(ngModel)]="newCompany.logo" class="form-control" name="companyLogo">
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Company name</span>
+					</div>
+					<input type="text" [(ngModel)]="newCompany.company" class="form-control" name="companyName" required>
+				</div>
+
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Industry</span>
+					</div>
+					<input type="text" [(ngModel)]="newCompany.industry" class="form-control" name="companyIndustry" required>
+				</div>
+
+				<div class="input-group about">
+					<div class="input-group-prepend">
+						<span class="input-group-text">About company</span>
+					</div>
+					<textarea class="form-control" [(ngModel)]="newCompany.about" name="companyAbout"></textarea>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

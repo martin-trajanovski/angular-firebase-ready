@@ -1,0 +1,15 @@
+.nav-item.dropdown {
+	cursor: pointer;
+}
+
+.dropdown-menu {
+	padding: 10px;
+
+	.custom-checkbox {
+		border-bottom: 1px solid #dee2e6;
+
+		.custom-control-label {
+			min-width: 100%;
+		}
+	}
+}

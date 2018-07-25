@@ -1,0 +1,12 @@
+<div class="card" [routerLink]="['/company', company._id]" (click)="onSelect(company)">
+	<i class="fa fa-trash-o fa-2x icon-delete" aria-hidden="true" (click)="removeCompany($event, company)"></i>
+	<div class="card-img-holder">
+		<img class="card-img-top" [src]="company.logo" alt="Company image">
+	</div>
+
+	<div class="card-body">
+		<h5 class="card-title">{{company.company}}</h5>
+		<h6 class="card-subtitle mb-2 text-muted">{{company.industry}}</h6>
+		<p class="card-text">{{company.about}}</p>
+	</div>
+</div>
