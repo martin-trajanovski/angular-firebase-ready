@@ -55,7 +55,7 @@ const appRoutes: Routes = [
 	imports: [
 		BrowserModule,
 		FormsModule,
-		HttpClientModule, // <-- For querying todos list from: 'https://s3-eu-west-1.amazonaws.com/fov-coding-test/customers.json
+		HttpClientModule,
 		RouterModule.forRoot(
 			appRoutes,
 			{useHash: true}

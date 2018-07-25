@@ -3,7 +3,7 @@ import { CompaniesListService } from './companies-list.service';
 import { Company } from '../company-card/company.model';
 
 @Component({
-	selector: 'fov-companies-list',
+	selector: 'afr-companies-list',
 	templateUrl: './companies-list.component.html',
 	styleUrls: ['./companies-list.component.scss']
 })

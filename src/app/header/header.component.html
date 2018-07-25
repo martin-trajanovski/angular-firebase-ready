@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" routerLink="/companies" routerLinkActive="active">FoV Customers App Test</a>
+		<a class="navbar-brand" routerLink="/companies" routerLinkActive="active">Angular-Nestjs App</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 		 aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavigation()" *ngIf="showMenu">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" [class.show]="navbarExpanded" *ngIf="showMenu">
 			<ul class="navbar-nav mr-auto">
-				<li fovDropdown class="nav-item dropdown">
+				<li afrDropdown class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 					 (click)="getIndustries()">
 						Filter by industry

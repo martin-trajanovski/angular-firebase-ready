@@ -3,7 +3,7 @@ import { CompaniesListService } from '../companies-list/companies-list.service';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-	selector: 'fov-header',
+	selector: 'afr-header',
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss']
 })

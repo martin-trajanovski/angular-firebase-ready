@@ -1,7 +1,7 @@
 import { Directive, Renderer2, ElementRef, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
-	selector: '[fovDropdown]'
+	selector: '[afrDropdown]'
 })
 export class DropdownDirective {
 	isOpen = false;

@@ -4,7 +4,7 @@ import { CompaniesListService } from '../companies-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-	selector: 'fov-company-detail',
+	selector: 'afr-company-detail',
 	templateUrl: './company-detail.component.html',
 	styleUrls: ['./company-detail.component.scss']
 })

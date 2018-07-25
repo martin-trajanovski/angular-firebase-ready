@@ -4,7 +4,7 @@ import { CompaniesListService } from '../companies-list/companies-list.service';
 import { Router } from '@angular/router';
 
 @Component({
-	selector: 'fov-company-card',
+	selector: 'afr-company-card',
 	templateUrl: './company-card.component.html',
 	styleUrls: ['./company-card.component.scss']
 })

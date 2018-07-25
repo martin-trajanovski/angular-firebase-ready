@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "customers-single-page-futureofvoice": {
+    "angular-firebase-ready": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "customers-single-page-futureofvoice:build"
+            "browserTarget": "angular-firebase-ready:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "customers-single-page-futureofvoice:build:production"
+              "browserTarget": "angular-firebase-ready:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "customers-single-page-futureofvoice:build"
+            "browserTarget": "angular-firebase-ready:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "customers-single-page-futureofvoice-e2e": {
+    "angular-firebase-ready-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -112,7 +112,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "customers-single-page-futureofvoice:serve"
+            "devServerTarget": "angular-firebase-ready:serve"
           }
         },
         "lint": {
@@ -127,5 +127,5 @@
       }
     }
   },
-  "defaultProject": "customers-single-page-futureofvoice"
+  "defaultProject": "angular-firebase-ready"
 }
