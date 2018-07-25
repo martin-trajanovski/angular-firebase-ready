@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Demo
 
-The simple [demo](https://ageofempires.mk) is connected with an [API](https://linkshouldgohere.com) deployed on Heroku. It is developed using Nest.js (Angular inspired) Node.js framework
+The simple [demo](https://angular-nestjs.firebaseapp.com) is connected with an [API](https://github.com/martin-trajanovski/nestjs-heroku-ready) deployed on [Heroku](https://arcane-brushlands-72646.herokuapp.com/). It is developed using Nest.js (Angular inspired) Node.js framework
 
 ## Installation
 
