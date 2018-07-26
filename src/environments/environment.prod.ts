@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	api: 'https://arcane-brushlands-72646.herokuapp.com/'
+	api: 'https://quiet-dusk-3137.herokuapp.com/'
 };
