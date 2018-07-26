@@ -1,10 +1,10 @@
 # AngularFirebaseReady
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 # Demo
 
-The simple [demo](https://angular-nestjs.firebaseapp.com) is connected with an [API](https://github.com/martin-trajanovski/nestjs-heroku-ready) deployed on [Heroku](https://arcane-brushlands-72646.herokuapp.com/). It is developed using Nest.js (Angular inspired) Node.js framework
+The simple [demo](https://angular-nestjs.firebaseapp.com) is connected with an [API](https://github.com/martin-trajanovski/nestjs-heroku-ready) deployed on [Heroku](https://quiet-dusk-3137.herokuapp.com//). It is developed using Nest.js (Angular inspired) Node.js framework
 
 ## Installation
 
@@ -25,13 +25,20 @@ git clone https://github.com/martin-trajanovski/angular-firebase-ready.git
 npm install
 ```
 
-### Serving an CustomersSinglePageFutureofvoice (Angular project) via a development server
+### Serving an AngularFirebaseReady (Angular project) via a development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**IMPORTANT:** If you want your app to be [PWA](https://developers.google.com/web/progressive-web-apps/) you need to run `ng build --prod` because service-worker runs only in production environment.
+
+## Deployment
+
+Create your account (or use existing one) on [firebase](https://firebase.google.com/) go to [console](https://console.firebase.google.com) click add new project and give it a name. Use that name to change `.firebaserc` file with your default project name.
+
+Run `firebase login` and give it a try with `firebase deploy` command to deploy the project. Feel free to [contact](mailto:martin.trajanovski@gmail.com) me for any issues or problems.
 
 ## Further help
 
