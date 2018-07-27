@@ -43,4 +43,4 @@ Run `firebase login` and give it a try with `firebase deploy` command to deploy 
 
 ## Further help
 
-Feel free to [contact](mailto:martin.trajanovski@gmail.com?subject=AngularFirebaseReady question) me for any issues or problems.
+Feel free to [contact](mailto:martin.trajanovski@gmail.com?Subject=AngularFirebaseReady%20question) me for any issues or problems.
