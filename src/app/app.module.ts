@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -56,6 +58,10 @@ const appRoutes: Routes = [
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
+		NgProgressModule.forRoot({
+			color: '#c3002f'
+		}),
+		NgProgressHttpModule,
 		RouterModule.forRoot(
 			appRoutes,
 			{useHash: true}
