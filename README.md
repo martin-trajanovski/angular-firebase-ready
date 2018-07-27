@@ -39,8 +39,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Create your account (or use existing one) on [firebase](https://firebase.google.com/) go to [console](https://console.firebase.google.com) click add new project and give it a name. Use that name to change `.firebaserc` file with your default project name.
 
-Run `firebase login` and give it a try with `firebase deploy` command to deploy the project. Feel free to [contact](mailto:martin.trajanovski@gmail.com) me for any issues or problems.
+Run `firebase login` and give it a try with `firebase deploy` command to deploy the project.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Feel free to [contact](mailto:martin.trajanovski@gmail.com) me for any issues or problems.
