@@ -28,6 +28,7 @@ npm install
 ### Serving an AngularFirebaseReady (Angular project) via a development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**IMPORTANT:** before you start the dev server you need to have your [api](https://github.com/martin-trajanovski/nestjs-heroku-ready) up and running in development mode also. Just clone the repo run `yarn install` and `yarn start` and it should do the thing.
 
 ## Build
 

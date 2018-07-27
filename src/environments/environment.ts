@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	api: 'https://quiet-dusk-3137.herokuapp.com/'
+	api: 'http://localhost:5000/'
 };
 
 /*
