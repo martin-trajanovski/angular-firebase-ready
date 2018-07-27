@@ -25,7 +25,14 @@
 		</div>
 		<div class="row mt-3" *ngIf="companyDetailsLoaded">
 			<div class="col-md-5 mb-3">
-				<img [src]="selectedCompanyEl.logo" class="img-fluid" alt="">
+				<img [src]="selectedCompanyEl.logo" class="img-fluid mb-3" alt="">
+
+				<div *ngIf="editMode" class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Logo url</span>
+					</div>
+					<input type="text" [(ngModel)]="selectedCompanyEl.logo" class="form-control" name="companyLogo">
+				</div>
 			</div>
 			<div class="col-md-7">
 				<h5 *ngIf="!editMode" class="card-title">{{selectedCompanyEl.company}}</h5>
