@@ -34,7 +34,7 @@ export class CompanyDetailComponent implements OnInit, OnDestroy {
 						result[0].isActive,
 						result[0].company,
 						result[0].about,
-						result[0].logo || 'https://via.placeholder.com/500x350',
+						result[0].logo || 'https://via.placeholder.com/500x300',
 						result[0].industry,
 						result[0].projects
 					);

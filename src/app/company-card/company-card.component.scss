@@ -1,7 +1,6 @@
 .card {
 	box-shadow: 0;
 	transition: all 200ms;
-	max-height: 376px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 	.icon-delete {
@@ -27,7 +26,6 @@
 
 		.card-img-top {
 			max-width: 100%;
-			max-height: 120px;
 		}
 	}
 
