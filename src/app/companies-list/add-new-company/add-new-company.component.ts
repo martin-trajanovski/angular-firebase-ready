@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 	styleUrls: ['./add-new-company.component.scss']
 })
 export class AddNewCompanyComponent implements OnInit {
-	newCompany: Company = new Company(this.generateUuid(), true, '', '', 'https://via.placeholder.com/500x300', '', []);
+	newCompany: Company = new Company(this.generateUuid(), true, '', '', 'https://picsum.photos/500/400/?random', '', []);
 	newCompanyCopy: Company;
 
 	constructor(
