@@ -1,5 +1,5 @@
-<div class="row mb-3">
-	<div [class.hide]="getVisibility(company)" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-3 card-wrapper" *ngFor="let company of companies | filterByName: queryString">
+<div class="row mb-4">
+	<div [class.hide]="getVisibility(company)" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-3 card-wrapper" *ngFor="let company of companies | filterByName: queryString">
 		<afr-company-card [company]="company"></afr-company-card>
 	</div>
 </div>

@@ -66,7 +66,7 @@ export class CompaniesListComponent implements OnInit {
 				element.isActive,
 				element.company,
 				element.about,
-				element.logo || 'https://via.placeholder.com/500x300',
+				element.logo || 'https://picsum.photos/500/400/?random',
 				element.industry,
 				element.projects
 			)
