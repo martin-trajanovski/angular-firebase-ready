@@ -27,16 +27,16 @@ export class CompanyDetailComponent implements OnInit, OnDestroy {
 	getCompanyDetails() {
 		if (!this.CompanyService.getSelectedCompany() && this.route.snapshot.params.id) {
 			this.CompanyService.getCompanyById(this.route.snapshot.params.id)
-			.then((result: [Company]) => {
-				if (result && result.length > 0) {
+			.then((result: Company) => {
+				if (result) {
 					this.selectedCompanyEl = new Company(
-						result[0]._id,
-						result[0].isActive,
-						result[0].company,
-						result[0].about,
-						result[0].logo || 'https://picsum.photos/500/400/?random',
-						result[0].industry,
-						result[0].projects
+						result._id,
+						result.isActive,
+						result.company,
+						result.about,
+						result.logo || 'https://picsum.photos/500/400/?random',
+						result.industry,
+						result.projects
 					);
 
 					this.companyDetailsLoaded = true;
@@ -57,18 +57,20 @@ export class CompanyDetailComponent implements OnInit, OnDestroy {
 	}
 
 	saveChanges() {
-		// save if there is endpoint :)
-		this.CompanyService.saveCompanyChanges(this.selectedCompanyEl);
-		this.editMode = false;
+		this.CompanyService.saveCompanyChanges(this.selectedCompanyEl)
+		.then(() => {
+			this.editMode = false;
+		});
 	}
 
 	removeCompany() {
 		const message = confirm(`Are you sure you want to delete ${this.selectedCompanyEl.company}?`);
 
 		if (message) {
-			this.CompanyService.removeCompany(this.selectedCompanyEl);
-
-			this.router.navigate(['/companies']);
+			this.CompanyService.removeCompany(this.selectedCompanyEl)
+			.then((result: Company) => {
+				this.router.navigate(['/companies']);
+			});
 		}
 	}
 

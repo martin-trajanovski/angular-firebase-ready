@@ -62,7 +62,7 @@ export class CompaniesListComponent implements OnInit {
 	private insertElement(element) {
 		this.companies.push(
 			new Company(
-				element._id,
+				element._id || '',
 				element.isActive,
 				element.company,
 				element.about,

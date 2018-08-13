@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Company } from './company.model';
 import { CompaniesListService } from '../companies-list/companies-list.service';
-import { Router } from '@angular/router';
 
 @Component({
 	selector: 'afr-company-card',
@@ -12,8 +11,7 @@ export class CompanyCardComponent implements OnInit {
 	@Input() company: Company;
 
 	constructor(
-		private CompanyService: CompaniesListService,
-		private router: Router
+		private CompanyService: CompaniesListService
 	) { }
 
 	ngOnInit() {
@@ -29,8 +27,6 @@ export class CompanyCardComponent implements OnInit {
 		if (message) {
 			this.CompanyService.removeCompany(company);
 		}
-
-		// this.router.navigate(['/company']);
 
 		event.stopPropagation();
 	}

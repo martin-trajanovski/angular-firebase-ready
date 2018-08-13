@@ -18,14 +18,14 @@ export class CompaniesListService {
 
 	constructor(private http: HttpClient) { }
 
-	companiesListUrl = environment.api;
+	companiesApiUrl = `${environment.api}/companies`;
 
 	getCompanies() {
 		return new Promise(resolve => {
 			if (this.companies && this.companies.length > 0) {
 				resolve(this.companies);
 			} else {
-				this.http.get(this.companiesListUrl)
+				this.http.get(this.companiesApiUrl)
 				.subscribe((result: Company[]) => {
 					this.companies = result;
 
@@ -40,35 +40,64 @@ export class CompaniesListService {
 			if (this.companies && this.companies.length > 0) {
 				resolve(this.companies.filter((element: Company) => element._id === id));
 			} else {
-				this.getCompanies().then((result: Company[]) => {
-					resolve(result.filter((element: Company) => element._id === id));
+				this.http.get(`${this.companiesApiUrl}/${id}`)
+				.subscribe((result: Company) => {
+					resolve(result);
 				});
 			}
 		});
 	}
 
-	saveCompanyChanges(company) {
-		const elementPos = this.companies.map(function(x) {return x._id; }).indexOf(company._id);
+	saveCompanyChanges(companyToUpdate) {
+		return new Promise(resolve => {
+			if (companyToUpdate && companyToUpdate._id) {
+				this.http.put(`${this.companiesApiUrl}/${companyToUpdate._id}`, companyToUpdate)
+				.subscribe((result: Company) => {
+					const updatedCompanyIndex = this.companies.findIndex(company => company._id === result._id);
 
-		if (elementPos) {
-			this.companies[elementPos] = company;
-		}
+					if (updatedCompanyIndex !== -1) {
+						this.companies[updatedCompanyIndex] = result;
+
+						resolve(result);
+					}
+				});
+			}
+		});
 	}
 
 	insertCompany(companyToInsert) {
-		if (companyToInsert && companyToInsert._id) {
-			this.companies.unshift(companyToInsert); // Insert company at the very beginning!
-		}
+		return new Promise(resolve => {
+			if (companyToInsert) {
+				this.http.post(`${this.companiesApiUrl}`, companyToInsert)
+				.subscribe((result: Company) => {
+					this.companies.push(result); // Push the inserted company in the array!
+					this.setSelectedCompany(result);
+
+					resolve(result);
+				});
+			}
+		});
 	}
 
 	removeCompany(companyToRemove) {
-		const elementPos = this.companies.map(function(x) {return x._id; }).indexOf(companyToRemove._id);
+		return new Promise(resolve => {
+			if (companyToRemove && companyToRemove._id) {
+				this.http.delete(`${this.companiesApiUrl}/${companyToRemove._id}`)
+				.subscribe((result: Company) => {
+					const removedCompanyIndex = this.companies.findIndex(company => company._id === result._id);
 
-		if (elementPos !== -1) {
-			this.companies.splice(elementPos, 1);
+					if (removedCompanyIndex !== -1) {
+						this.companies.splice(removedCompanyIndex, 1);
 
-			this.companiesChanged.emit(this.companies);
-		}
+						this.companiesChanged.emit(this.companies);
+
+						this.removeSelectedCompany();
+
+						resolve(result);
+					}
+				});
+			}
+		});
 	}
 
 	setUniqueIndustries(industries) {

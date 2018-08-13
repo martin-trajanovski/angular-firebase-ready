@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 	styleUrls: ['./add-new-company.component.scss']
 })
 export class AddNewCompanyComponent implements OnInit {
-	newCompany: Company = new Company(this.generateUuid(), true, '', '', 'https://picsum.photos/500/400/?random', '', []);
+	newCompany: Company = new Company('', true, '', '', 'https://picsum.photos/500/400/?random', '', []);
 	newCompanyCopy: Company;
 
 	constructor(
@@ -17,25 +17,15 @@ export class AddNewCompanyComponent implements OnInit {
 		private router: Router
 	) { }
 
-	generateUuid() {
-		let uuid = '';
-		const allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-
-		for (let i = 0; i < 24; i++) {
-			uuid += allowedChars.charAt(Math.floor(Math.random() * allowedChars.length));
-		}
-
-		return uuid;
-	}
-
 	clear() {
 		this.newCompany = {...this.newCompanyCopy};
 	}
 
 	addCompany() {
-		this.CompanyService.insertCompany(this.newCompany);
-
-		this.router.navigate(['/company/', this.newCompany._id]);
+		this.CompanyService.insertCompany(this.newCompany)
+		.then((result: Company) => {
+			this.router.navigate(['/company/', result._id]);
+		});
 	}
 
 	ngOnInit() {
